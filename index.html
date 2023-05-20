@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bomb the game</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Planet Launch</title>
   </head>
   <body>
     <div class="game-container">
       <canvas id="game"></canvas>
 
-      <div class="button container">
-        <button id="up"></button>
-        <button id="left"></button>
-        <button id="right"></button>
-        <button id="down"></button>
+      <div class="button-container">
+        <button id="up">Up</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+        <button id="down">Down</button>
+      </div>
+
+      <div class="message">
+        <p>Lives: <span id="lives"></span></p>
+        <p>Time: <span id="time"></span></p>
+        <p>Record: <span id="record"></span></p>
+        <p id="result"></p>
       </div>
     </div>
+
+    <script src="./maps.js"></script>
+    <script src="./game.js"></script>
   </body>
 </html>
