@@ -222,8 +222,6 @@ function levelFail() {
 function gameWinAndRecord() {
   clearInterval(timeInterval);
 
-  finish();
-
   const totalTimeOfTheGame = playerTimesNow.getInnerHTML();
   if (localStorage.length === 0) {
     localStorage.setItem(keyLocalStorage, totalTimeOfTheGame);
@@ -236,6 +234,7 @@ function gameWinAndRecord() {
     playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
   }
 
+  finish();
 
 }
 
