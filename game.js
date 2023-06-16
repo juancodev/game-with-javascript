@@ -222,18 +222,6 @@ function levelFail() {
 function gameWinAndRecord() {
   clearInterval(timeInterval);
 
-  const totalTimeOfTheGame = playerTimesNow.getInnerHTML();
-  if (localStorage.length === 0) {
-    localStorage.setItem(keyLocalStorage, totalTimeOfTheGame);
-    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
-  } else if (localStorage.length !== 0 && localStorage.getItem(keyLocalStorage) > totalTimeOfTheGame) {
-    localStorage.removeItem(keyLocalStorage);
-    localStorage.setItem(keyLocalStorage, totalTimeOfTheGame);
-    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
-  } else {
-    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
-  }
-
   finish();
 
 }
@@ -260,6 +248,18 @@ function showRecord() {
 function finish() {
   playerFinished.classList.remove('notVisible');
   document.querySelector('.game-container').style.filter = "blur(5px)"
+
+  const totalTimeOfTheGame = playerTimesNow.getInnerHTML();
+  if (localStorage.length === 0) {
+    localStorage.setItem(keyLocalStorage, totalTimeOfTheGame);
+    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
+  } else if (localStorage.length !== 0 && localStorage.getItem(keyLocalStorage) > totalTimeOfTheGame) {
+    localStorage.removeItem(keyLocalStorage);
+    localStorage.setItem(keyLocalStorage, totalTimeOfTheGame);
+    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
+  } else {
+    playerTimesRecord.innerHTML = localStorage.getItem(keyLocalStorage);
+  }
 
   let count = 10;
 
